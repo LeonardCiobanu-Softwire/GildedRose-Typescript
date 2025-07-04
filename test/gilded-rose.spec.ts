@@ -46,3 +46,14 @@ describe('Aged Brie', function () {
 
 });
 
+describe('Normal item', function () {
+
+    it('Quality decreases with age', () => {
+        const gildedRose = new GildedRose([new Item('bread', 20, 0), new Item('bread', 20, 10)]);
+        expect(gildedRose.updateQuality()).to.deep.equal([new Item('bread', 19, 0), new Item('bread', 19, 9)]);
+    });
+    it('Quality decreases twice as fast, past its sell date', () => {
+        const gildedRose = new GildedRose([new Item('bread', 0, 10), new Item('bread', -1, 10), new Item('bread', -1, 50)]);
+        expect(gildedRose.updateQuality()).to.deep.equal([new Item('bread', -1, 8), new Item('bread', -2, 8), new Item('bread', -2, 48)]);
+    });
+});
