@@ -15,9 +15,12 @@ const item_list: Item[] = [
     new Item('Sulfuras', 10, 10),
     new Item('Sulfuras1', 60, 60),
     new Item('Sulfuras, Hand of Ragnaros', 30, 40),
+    new Item('Fictional Product :))', -5, 40),
     new Item('Backstage passes', 40, 40),
     new Item('Backstage passes2', 60, 60),
-    new Item('Backstage passes to a TAFKAL80ETC concert', 40, 40)
+    new Item('Backstage passes to a TAFKAL80ETC concert', 40, 40),
+    new Item('Backstage passes to a TAFKAL80ETC concert', 1, 40),
+    new Item('Backstage passes to a TAFKAL80ETC concert', 11, 40),
 ];
 
 let once_aged_item_list: Item[] = [
@@ -34,9 +37,12 @@ let once_aged_item_list: Item[] = [
     new Item('Sulfuras', 9, 9),
     new Item('Sulfuras1', 59, 59),
     new Item('Sulfuras, Hand of Ragnaros', 30, 40),
+    new Item('Fictional Product :))', -6, 38),
     new Item('Backstage passes', 39, 39),
     new Item('Backstage passes2', 59, 59),
-    new Item('Backstage passes to a TAFKAL80ETC concert', 39, 41)
+    new Item('Backstage passes to a TAFKAL80ETC concert', 39, 41),
+    new Item('Backstage passes to a TAFKAL80ETC concert', 0, 43),
+    new Item('Backstage passes to a TAFKAL80ETC concert', 10, 41),
 ];
 
 let twice_aged_item_list: Item[] = [
@@ -53,9 +59,12 @@ let twice_aged_item_list: Item[] = [
     new Item('Sulfuras', 8, 8),
     new Item('Sulfuras1', 58, 58),
     new Item('Sulfuras, Hand of Ragnaros', 30, 40),
+    new Item('Fictional Product :))', -7, 36),
     new Item('Backstage passes', 38, 38),
     new Item('Backstage passes2', 58, 58),
-    new Item('Backstage passes to a TAFKAL80ETC concert', 38, 42)
+    new Item('Backstage passes to a TAFKAL80ETC concert', 38, 42),
+    new Item('Backstage passes to a TAFKAL80ETC concert', -1, 0),
+    new Item('Backstage passes to a TAFKAL80ETC concert', 9, 43),
 ];
 
 let three_times_aged_item_list: Item[] = [
@@ -72,9 +81,12 @@ let three_times_aged_item_list: Item[] = [
     new Item('Sulfuras', 7, 7),
     new Item('Sulfuras1', 57, 57),
     new Item('Sulfuras, Hand of Ragnaros', 30, 40),
+    new Item('Fictional Product :))', -8, 34),
     new Item('Backstage passes', 37, 37),
     new Item('Backstage passes2', 57, 57),
-    new Item('Backstage passes to a TAFKAL80ETC concert', 37, 43)
+    new Item('Backstage passes to a TAFKAL80ETC concert', 37, 43),
+    new Item('Backstage passes to a TAFKAL80ETC concert', -2, 0),
+    new Item('Backstage passes to a TAFKAL80ETC concert', 8, 45),
 ];
 
 describe('Master Golden Test', () => {

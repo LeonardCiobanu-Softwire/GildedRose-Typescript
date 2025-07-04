@@ -9,16 +9,39 @@ export class Item {
         this.quality = quality;
     }
 }
-
 export class GildedRose {
     items: Array<Item>;
-
+    
     constructor(items = [] as Array<Item>) {
         this.items = items;
     }
 
+    min(a: number, b: number): number {
+        if (a < b) return a;
+        return b;
+    }
+    
+    updateBackstage(item: Item): Item {
+        item.sellIn--;
+        if (item.sellIn < 0) {
+            item.quality = 0;
+        } else if (item.sellIn < 5) {
+            item.quality = this.min(item.quality + 3, 50);
+        } else if (item.sellIn < 10) {
+            item.quality = this.min(item.quality + 2, 50);
+        } else {
+            item.quality = this.min(item.quality + 1, 50);
+        }
+        return item;
+    }
+
     updateQuality() {
+
         for (let i = 0; i < this.items.length; i++) {
+            if (this.items[i].name === 'Backstage passes to a TAFKAL80ETC concert') {
+                this.items[i] = this.updateBackstage(this.items[i]);
+                continue;
+            }
             if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
                 if (this.items[i].quality > 0) {
                     if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
