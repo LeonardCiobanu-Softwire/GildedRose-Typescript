@@ -44,16 +44,20 @@ export class GildedRose {
 
         for (let i = 0; i < this.items.length; i++) {
             if (this.items[i].name === 'Sulfuras, Hand of Ragnaros') {
-                continue;
             } else if (this.items[i].name === 'Backstage passes to a TAFKAL80ETC concert') {
                 this.items[i] = this.updateBackstage(this.items[i]);
-                continue;
             } else if (this.items[i].name === 'Aged Brie') {
                 this.items[i].sellIn--;
                 this.items[i].quality = this.min(this.items[i].quality + 1, 50);
                 if (this.items[i].sellIn < 0)
                     this.items[i].quality = this.min(this.items[i].quality + 1, 50);
-                continue;
+            } else if (this.items[i].name === 'Conjuration Mana Cake'){
+                this.items[i].sellIn--;
+                if (this.items[i].quality > 0) {
+                    this.items[i].quality = this.max(this.items[i].quality - 2, 0);
+                    if (this.items[i].sellIn < 0)
+                        this.items[i].quality = this.max(this.items[i].quality - 2, 0);
+                }
             } else {
                 this.items[i].sellIn--;
                 if (this.items[i].quality > 0) {
@@ -61,7 +65,6 @@ export class GildedRose {
                     if (this.items[i].sellIn < 0)
                         this.items[i].quality = this.max(this.items[i].quality - 1, 0);
                 }
-                continue;
             }
         }
 

@@ -57,3 +57,16 @@ describe('Normal item', function () {
         expect(gildedRose.updateQuality()).to.deep.equal([new Item('bread', -1, 8), new Item('bread', -2, 8), new Item('bread', -2, 48)]);
     });
 });
+
+describe('Conjuration Mana Cake', function () {
+
+    let conj: string = 'Conjuration Mana Cake';
+    it('Quality decreases twice with age', () => {
+        const gildedRose = new GildedRose([new Item(conj, 20, 0), new Item(conj, 20, 10)]);
+        expect(gildedRose.updateQuality()).to.deep.equal([new Item(conj, 19, 0), new Item(conj, 19, 8)]);
+    });
+    it('Quality decreases four times, past its sell date', () => {
+        const gildedRose = new GildedRose([new Item(conj, 0, 10), new Item(conj, -1, 10), new Item(conj, -1, 50)]);
+        expect(gildedRose.updateQuality()).to.deep.equal([new Item(conj, -1, 6), new Item(conj, -2, 6), new Item(conj, -2, 46)]);
+    });
+});
